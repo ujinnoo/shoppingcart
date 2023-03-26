@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장 보기</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div id="container">
+        <img id="image2" src="img/milk.png" width="100px">
+        <img id="image1" src="img/tomato.png" width="60px">
+        <img id="image3" src="img/banana.png" width="120px">
+    </div>
+    <script>
+    window.addEventListener("scroll", function () {
+        var image1 = document.getElementById("image1");
+        var image2 = document.getElementById("image2");
+        var image3 = document.getElementById("image3");
+        var scrollTop = document.documentElement.scrollTop;
+        var maxScroll = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var stopPosition1 = document.documentElement.scrollHeight - image1.clientHeight - 1000; // 이미지1이 멈출 위치를 계산
+        var stopPosition2 = document.documentElement.scrollHeight - image2.clientHeight - 960; // 이미지2가 멈출 위치를 계산
+        var stopPosition3 = document.documentElement.scrollHeight - image3.clientHeight - 980; // 이미지3이 멈출 위치를 계산
+
+        // 이미지1 위치 업데이트
+        if (scrollTop >= stopPosition1) {
+            image1.style.top = stopPosition1 / maxScroll * 100 + "%"; // 스크롤이 멈추는 위치에서 이미지를 고정
+        } else {
+            image1.style.top = scrollTop / maxScroll * 100 + "%"; // 스크롤 위치에 따라 이미지 위치를 업데이트
+        }
+
+        // 이미지2 위치 업데이트
+        if (scrollTop >= stopPosition2) {
+            image2.style.top = stopPosition2 / maxScroll * 100 + "%"; // 스크롤이 멈추는 위치에서 이미지를 고정
+        } else {
+            image2.style.top = scrollTop / maxScroll * 100 + "%"; // 스크롤 위치에 따라 이미지 위치를 업데이트
+        }
+
+        // 이미지3 위치 업데이트
+        if (scrollTop >= stopPosition3) {
+            image3.style.top = stopPosition3 / maxScroll * 100 + "%"; // 스크롤이 멈추는 위치에서 이미지를 고정
+        } else {
+            image3.style.top = scrollTop / maxScroll * 100 + "%"; // 스크롤 위치에 따라 이미지 위치를 업데이트
+        }
+    });
+    </script>
+</body>
+
+</html>

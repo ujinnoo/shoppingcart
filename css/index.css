@@ -1,0 +1,26 @@
+body {
+    background-image: url(../img/cart.png);
+    background-position: bottom center;
+    background-size: 600px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    height: 749px;
+}
+
+#container {
+    position: relative;
+    height: 3000px;
+}
+
+#image1 {
+    position: absolute;
+}
+#image2 {
+    position: absolute;
+    left: 45%;
+}
+#image3 {
+    position: absolute;
+    left: 55%;
+}
